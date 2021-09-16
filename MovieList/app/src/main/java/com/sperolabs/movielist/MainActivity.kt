@@ -1,9 +1,13 @@
 package com.sperolabs.movielist
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.sperolabs.movielist.ui.main.MainFragment
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import com.sperolabs.movielist.home.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
+                    .replace(R.id.container, NavHostFragment.create(R.navigation.navigation_graph))
                     .commitNow()
         }
     }
