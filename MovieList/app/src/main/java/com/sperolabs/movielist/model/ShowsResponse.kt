@@ -7,5 +7,6 @@ class ShowsResponse(
     val pageNumber : Int,
     @SerializedName("pages")
     val totalPages : Int,
+    @SerializedName("tv_shows")
     val results : List<TvShow>
 )

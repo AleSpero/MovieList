@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.main_fragment.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MainFragment : Fragment() {
 
     val adapter = ShowsAdapter()
@@ -30,8 +31,6 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         collectFlow()
-
-
     }
 
     fun setupRecyclerView(){

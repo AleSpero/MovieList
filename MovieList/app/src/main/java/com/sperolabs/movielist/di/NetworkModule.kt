@@ -31,7 +31,7 @@ object NetworkModule {
             .baseUrl("https://www.episodate.com/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
-    
+
     @Singleton
     @Provides
     fun provideMovieEndpoint(retrofit: Retrofit) : MovieListEndpoint =
