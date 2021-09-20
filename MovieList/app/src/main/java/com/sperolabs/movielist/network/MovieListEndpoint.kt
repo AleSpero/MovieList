@@ -13,8 +13,4 @@ interface MovieListEndpoint {
 
     @GET("api/show-details/")
     suspend fun getShowDetail(@Query("q") showId : Int) : SingleShowResponse
-
-    @GET("api/search")
-    suspend fun searchForShows(@Query("q") searchPrompt : String, @Query("page") page : Int) : ShowsResponse
-
 }

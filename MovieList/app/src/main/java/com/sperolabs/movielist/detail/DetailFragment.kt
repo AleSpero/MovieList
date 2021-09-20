@@ -74,12 +74,16 @@ class DetailFragment : Fragment() {
                             }
                             is DataResult.Failure -> {
                                 Log.e("DetailFragment", dataResult.error.localizedMessage ?: "")
-                                //TODO error
+                                populateErrorView(dataResult.error)
                             }
                         }
                     }
                 }
         }
+    }
+
+    fun populateErrorView(throwable: Throwable){
+
     }
 
     fun populateDetailView(tvShow: TvShow) {
