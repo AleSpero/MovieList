@@ -2,10 +2,30 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/popular_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popular_shows"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_centerInParent="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/popular_label"
         android:id="@+id/showsList"
+        android:visibility="gone"
         tools:listitem="@layout/show_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
