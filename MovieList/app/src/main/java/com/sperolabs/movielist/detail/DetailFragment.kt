@@ -83,7 +83,9 @@ class DetailFragment : Fragment() {
     }
 
     fun populateErrorView(throwable: Throwable){
-
+        loading_overlay.visibility = View.GONE
+        error_overlay.visibility = View.VISIBLE
+        error_description.text = throwable.localizedMessage
     }
 
     fun populateDetailView(tvShow: TvShow) {
