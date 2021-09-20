@@ -16,8 +16,7 @@ import org.junit.Test
 class ViewModelTest {
 
     val fakeApi = FakeMovieListEndpoint()
-    val fakeRepo = ShowRepository(fakeApi)
-    val viewModel = MainViewModel(fakeRepo)
+    val errorEndpoint = ErrorEndpoint()
 
     @ExperimentalCoroutinesApi
     private val testDispatcher = TestCoroutineDispatcher()
@@ -29,9 +28,22 @@ class ViewModelTest {
 
     @Test
     fun detailCallLoadingSuccessfully() = testDispatcher.runBlockingTest {
+        val fakeRepo = ShowRepository(fakeApi)
+        val viewModel = MainViewModel(fakeRepo)
+
         val detailResult = viewModel.getShowDetail(1).first()
         assert(detailResult is DataResult.Success)
         assert((detailResult as DataResult.Success).response.tvShow.name.isNotEmpty())
+    }
+
+    @Test
+    fun detailCallLoadingFailed() = testDispatcher.runBlockingTest {
+        val fakeRepo = ShowRepository(errorEndpoint)
+        val viewModel = MainViewModel(fakeRepo)
+
+        val detailResult = viewModel.getShowDetail(1).first()
+        assert(detailResult is DataResult.Failure)
+        assert((detailResult as DataResult.Failure).error.localizedMessage?.isNotEmpty() == true)
     }
 
 }
