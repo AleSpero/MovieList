@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_world.xml" value="0.24814814814814815" />
+        <entry key="app/src/main/res/layout/detail_fragment.xml" value="0.29791666666666666" />
+        <entry key="app/src/main/res/layout/main_activity.xml" value="0.22146739130434784" />
+        <entry key="app/src/main/res/layout/main_fragment.xml" value="0.2693111427266773" />
+        <entry key="app/src/main/res/layout/show_item.xml" value="3.517150293412952" />
+      </map>
+    </option>
   </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>
